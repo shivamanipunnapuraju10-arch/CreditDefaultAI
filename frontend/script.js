@@ -6,7 +6,7 @@ const resultSection = document.getElementById("resultSection");
 
 
 // PUBLIC BACKEND URL
-const API_URL = "https://universe-promotion-overlook.ngrok-free.dev/predict";
+const API_URL = "/predict";
 
 
 // All 23 model input features
