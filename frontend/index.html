@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreditWise | Credit Risk Assessment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">C</div>
+            <span>CreditWise</span>
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#assessment">Risk Assessment</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            System Active
+        </div>
+    </header>
+
+
+    <main class="container" id="dashboard">
+
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">CREDIT RISK MANAGEMENT</p>
+
+                <h1>Credit Risk Assessment</h1>
+
+                <p class="subtitle">
+                    Evaluate customer credit default risk using
+                    machine learning and cost-sensitive decisions.
+                </p>
+            </div>
+
+            <div class="date-label">
+                MODEL OVERVIEW<br>
+                <strong>Random Forest</strong>
+            </div>
+        </section>
+
+
+        <section class="overview-cards">
+
+            <div class="overview-card">
+                <p>Selected Model</p>
+                <h2>Random Forest</h2>
+                <span>Machine Learning Algorithm</span>
+            </div>
+
+            <div class="overview-card">
+                <p>Decision Threshold</p>
+                <h2>34%</h2>
+                <span>Cost-sensitive threshold</span>
+            </div>
+
+            <div class="overview-card">
+                <p>Test Recall</p>
+                <h2>79.65%</h2>
+                <span>Final test performance</span>
+            </div>
+
+        </section>
+
+
+        <section class="assessment-section" id="assessment">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CUSTOMER EVALUATION</p>
+                    <h2>Customer Information</h2>
+                    <p>Enter the customer's financial and repayment details.</p>
+                </div>
+
+                <span class="input-count">23 INPUT FEATURES</span>
+            </div>
+
+
+            <form id="predictionForm">
+
+                <div class="form-group">
+
+                    <h3>01. Personal Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="LIMIT_BAL">Credit Limit</label>
+                            <input type="number" id="LIMIT_BAL"
+                                placeholder="Example: 50000" min="0" required>
+                            <small>Amount in dataset currency units</small>
+                        </div>
+
+                        <div class="field">
+                            <label for="AGE">Age</label>
+                            <input type="number" id="AGE"
+                                placeholder="Example: 30" min="18" max="100" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="SEX">Gender Code</label>
+                            <select id="SEX" required>
+                                <option value="">Select gender code</option>
+                                <option value="1">1 - Male</option>
+                                <option value="2">2 - Female</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="EDUCATION">Education Code</label>
+                            <select id="EDUCATION" required>
+                                <option value="">Select education</option>
+                                <option value="1">1 - Graduate school</option>
+                                <option value="2">2 - University</option>
+                                <option value="3">3 - High school</option>
+                                <option value="4">4 - Others</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="MARRIAGE">Marriage Code</label>
+                            <select id="MARRIAGE" required>
+                                <option value="">Select status</option>
+                                <option value="1">1 - Married</option>
+                                <option value="2">2 - Single</option>
+                                <option value="3">3 - Others</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <h3>02. Repayment History</h3>
+
+                    <p class="group-description">
+                        Repayment status for the previous six months.
+                        Use the dataset's numerical coding.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="PAY_0">Most Recent Month (PAY_0)</label>
+                            <input type="number" id="PAY_0" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_2">PAY_2</label>
+                            <input type="number" id="PAY_2" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_3">PAY_3</label>
+                            <input type="number" id="PAY_3" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_4">PAY_4</label>
+                            <input type="number" id="PAY_4" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_5">PAY_5</label>
+                            <input type="number" id="PAY_5" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_6">PAY_6</label>
+                            <input type="number" id="PAY_6" value="0" required>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <h3>03. Previous Bill Amounts</h3>
+
+                    <p class="group-description">
+                        Enter the bill amounts for the previous six months.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="BILL_AMT1">BILL_AMT1</label>
+                            <input type="number" id="BILL_AMT1" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="BILL_AMT2">BILL_AMT2</label>
+                            <input type="number" id="BILL_AMT2" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="BILL_AMT3">BILL_AMT3</label>
+                            <input type="number" id="BILL_AMT3" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="BILL_AMT4">BILL_AMT4</label>
+                            <input type="number" id="BILL_AMT4" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="BILL_AMT5">BILL_AMT5</label>
+                            <input type="number" id="BILL_AMT5" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="BILL_AMT6">BILL_AMT6</label>
+                            <input type="number" id="BILL_AMT6" value="0" required>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <h3>04. Previous Payment Amounts</h3>
+
+                    <p class="group-description">
+                        Enter the payment amounts for the previous six months.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="PAY_AMT1">PAY_AMT1</label>
+                            <input type="number" id="PAY_AMT1" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_AMT2">PAY_AMT2</label>
+                            <input type="number" id="PAY_AMT2" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_AMT3">PAY_AMT3</label>
+                            <input type="number" id="PAY_AMT3" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_AMT4">PAY_AMT4</label>
+                            <input type="number" id="PAY_AMT4" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_AMT5">PAY_AMT5</label>
+                            <input type="number" id="PAY_AMT5" value="0" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="PAY_AMT6">PAY_AMT6</label>
+                            <input type="number" id="PAY_AMT6" value="0" required>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button type="reset" class="reset-button">
+                        Clear Form
+                    </button>
+
+                    <button type="submit" class="predict-button" id="predictButton">
+                        Analyze Credit Risk →
+                    </button>
+
+                </div>
+
+                <p class="form-note">
+                    All 23 input features are required for prediction.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <section class="result-section" id="resultSection" hidden>
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ASSESSMENT REPORT</p>
+                    <h2>Prediction Results</h2>
+                    <p>Results generated by the trained Random Forest model.</p>
+                </div>
+            </div>
+
+            <div class="result-card">
+
+                <div class="result-top">
+                    <div>
+                        <p class="result-label">DEFAULT PROBABILITY</p>
+                        <h2 id="probabilityValue">0%</h2>
+                    </div>
+
+                    <div class="result-badge" id="resultBadge">
+                        Pending
+                    </div>
+                </div>
+
+                <div class="probability-track">
+                    <div class="probability-fill" id="probabilityFill"></div>
+                </div>
+
+                <div class="result-details">
+
+                    <div>
+                        <span>Prediction</span>
+                        <strong id="predictionValue">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Decision Threshold</span>
+                        <strong id="thresholdValue">34%</strong>
+                    </div>
+
+                    <div>
+                        <span>ML Algorithm</span>
+                        <strong id="modelValue">Random Forest</strong>
+                    </div>
+
+                </div>
+
+                <p class="disclaimer">
+                    This result is a machine-learning estimate based on the
+                    supplied information. It should not be treated as a
+                    guaranteed outcome or an independent lending decision.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="about-section" id="about">
+
+            <p class="eyebrow">PROJECT INFORMATION</p>
+
+            <h2>About the Model</h2>
+
+            <p>
+                This project uses a Random Forest classification algorithm
+                to estimate the likelihood of credit card default.
+                A cost-sensitive decision threshold is applied to account
+                for the different importance of false positive and
+                false negative predictions.
+            </p>
+
+            <div class="about-details">
+                <span>Algorithm: Random Forest</span>
+                <span>Threshold: 0.34</span>
+                <span>Backend: Python Flask</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>CreditWise — Credit Default Risk Prediction Project</p>
+        <p>Machine Learning Based Risk Assessment</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

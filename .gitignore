@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+ngrok_tunnel.py
+dataset/*.xls
+dataset/processed/
